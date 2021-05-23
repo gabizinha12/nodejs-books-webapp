@@ -13,18 +13,23 @@ const retrieveVolumes = async function () {
 const retrieveSpecificVolume = async function (volumeId) {
 
 }
-const deleteBook = async function() {
+const deleteBook = async function () {
 
 }
-const favoriteBook = async function() {
+const favoriteBook = async function () {
 
 }
-const addBook = async function() {
+const addBook = async function () {
 
 }
-const searchBooks = async function() {
-  
+const searchBooks = async function () {
+
 }
 module.exports = {
-  retrieveVolumes
+  retrieveVolumes,
+  searchBooks,
+  addBook,
+  deleteBook,
+  favoriteBook,
+  retrieveSpecificVolume
 }
