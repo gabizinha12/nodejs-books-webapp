@@ -1,0 +1,25 @@
+{
+  "name": "nodejs-books-webapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabizinha12/nodejs-books-webapp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabizinha12/nodejs-books-webapp/issues"
+  },
+  "homepage": "https://github.com/gabizinha12/nodejs-books-webapp#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  }
+}
