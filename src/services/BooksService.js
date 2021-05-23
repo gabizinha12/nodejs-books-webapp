@@ -1,14 +1,8 @@
-const axios = require('axios')
-const apiBaseURL = 'https://www.googleapis.com/books/v1'
+const apiService = require('../apiService')
 
 const retrieveVolumes = async function () {
-  return await axios({
-    method: 'get',
-    url: apiBaseURL + '/volumes?q=search+terms',
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })
+  const response = await apiService.get('/volumes?q=search+terms')
+  return response.data
 }
 const retrieveSpecificVolume = async function (volumeId) {
 

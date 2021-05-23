@@ -1,26 +1,17 @@
 const { google } = require('googleapis')
+const axios = require('axios')
 require('dotenv').config()
 
-const books = google.books({
+google.books({
   version: 'v1',
-  auth: process.env.GOOGLE_CREDENTIAL
+  auth: process.env.API_KEY
 })
 // Do the magic
-async function main() {
-  const auth = new google.auth.GoogleAuth({
-    // Scopes can be specified either as an array or as a single, space-delimited string.
-    scopes: ['https://www.googleapis.com/auth/books'],
-  });
-
-  // Acquire an auth client, and bind it to all future calls
-  const authClient = await auth.fromAPIKey('AIzaSyAd_b7XuqjWc2u-68ls7zbGriX1OXx0Yy8')
-  google.options({auth: authClient});
-
-  // Do the magic
-  const res = await books.bookshelves.get({
-    shelf: 'teste'
-  })
-  userId: '105020858009407835072'
+const apiService = axios.create({
+  baseURL: 'https://www.googleapis.com/books/v1'
+})
+async function main () {
+  const res = await apiService.get('/volumes?q="harry+potter"')
   console.log(res.data)
   // Example response
   // {
@@ -38,6 +29,6 @@ async function main() {
 }
 
 main().catch(e => {
-  console.error(e);
-  throw e;
-});
+  console.error(e)
+  throw e
+})
